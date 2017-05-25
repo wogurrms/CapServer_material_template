@@ -100,19 +100,19 @@
 				<div class="android-navigation-container">
 					<nav class="android-navigation mdl-navigation">
 						<a class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="/resources/material/index.html">home</a> <a
+							href="<c:url value="/"/>">home</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="/resources/material/today.html">today</a> <a
+							href="<c:url value="/userpage/todayamount"/>">today</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="/resources/material/ranking.html">ranking</a> <a
+							href="<c:url value="/userpage/ranking"/>">ranking</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
 							href="<c:url value="/userpage/chartFromRecord"/>">chart</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="/resources/material/nicotine.html">nicotine</a> <a
+							href="<c:url value="/userpage/mynicotine"/>">nicotine</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="/resources/material/spend.html">spend</a> <a
+							href="<c:url value="/userpage/spend"/>">spend</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="/resources/material/calendar.html">calendar</a>
+							href="<c:url value="/userpage/calendar"/>">calendar</a>
 					</nav>
 				</div>
 				<span class="android-mobile-title mdl-layout-title"> <img
@@ -138,13 +138,13 @@
 				class="android-logo-image" src="<c:url value="/resources/material/images/logo-white.png"/>">
 			</span>
 			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link" href="index.html">home</a> <a
-					class="mdl-navigation__link" href="today.html">today</a> <a
-					class="mdl-navigation__link" href="ranking.html">ranking</a> <a
+				<a class="mdl-navigation__link" href="<c:url value="/"/>">home</a> <a
+					class="mdl-navigation__link" href="<c:url value="/userpage/todayamount"/>">today</a> <a
+					class="mdl-navigation__link" href="<c:url value="/userpage/ranking"/>">ranking</a> <a
 					class="mdl-navigation__link" href="<c:url value="/userpage/chartFromRecord"/>">chart</a> <a
-					class="mdl-navigation__link" href="nicotine.html">nicotine</a> <a
-					class="mdl-navigation__link" href="spend.html">spend</a> <a
-					class="mdl-navigation__link" href="calendar.html">calendar</a>
+					class="mdl-navigation__link" href="<c:url value="/userpage/mynicotine"/>">nicotine</a> <a
+					class="mdl-navigation__link" href="<c:url value="/userpage/spend"/>">spend</a> <a
+					class="mdl-navigation__link" href="<c:url value="/userpage/calendar"/>">calendar</a>
 			</nav>
 		</div>
 
