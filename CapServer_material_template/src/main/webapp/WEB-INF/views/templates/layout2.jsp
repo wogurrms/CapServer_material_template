@@ -113,8 +113,7 @@
 				<!-- Navigation -->
 				<div class="android-navigation-container">
 					<nav class="android-navigation mdl-navigation">
-						<a class="mdl-navigation__link mdl-typography--text-uppercase"
-							href="<c:url value="/"/>">home</a> <a
+						 <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
 							href="<c:url value="/userpage/todayamount"/>">today</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
@@ -162,7 +161,7 @@
 				src="<c:url value="/resources/material/images/logo-white.png"/>">
 			</span>
 			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link" href="<c:url value="/"/>">home</a> <a
+				 <a
 					class="mdl-navigation__link"
 					href="<c:url value="/userpage/todayamount"/>">today</a> <a
 					class="mdl-navigation__link"
