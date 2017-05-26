@@ -4,8 +4,7 @@
 
 <div class="login-container-wrapper">
 	<div class="login-container">
-		<h2>Login with Username and Password</h2>
-
+			<img src="<c:url value="/resources/material/images/icon.png"/>" width="110px" height="100px"/>
 		<c:if test="${not empty logout}">
 			<div>
 				<h3 style="color: #0000ff">${logout}</h3>
@@ -19,19 +18,17 @@
 		</c:if>
 
 		<form action=<c:url value="/login"/> method="post">
-			<div class="form-group">
+			<div class="form-group" >
 				<i class="material-icons prefix">account_circle</i> <input
 					type="text" class="form-control" name="username"
-					placeholder="username" style="width: 50%">
+					placeholder="username" style="width: 30%">
 			</div>
 			<div class="form-group">
 				<i class="material-icons prefix">lock</i> <input type="password"
 					class="form-control" name="password" placeholder="password"
-					style="width: 50%">
+					style="width: 30%">
 			</div>
-			<br>
-
-			<input type="hidden" name="${_csrf.parameterName}"
+			<br> <input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" /> <input type="submit" value="확인"
 				class="waves-effect waves-light btn">
 		</form>
