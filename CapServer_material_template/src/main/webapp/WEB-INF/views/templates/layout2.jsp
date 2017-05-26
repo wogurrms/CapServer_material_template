@@ -37,10 +37,15 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="<c:url value="/resources/material/material.min.css"/>">
+	
+<link rel="stylesheet"
+	href="<c:url value="/resources/material/materialize.min.css"/>">
+	
 <link rel="stylesheet"
 	href="<c:url value="/resources/material/styles.css"/>">
 
-<script src="<c:url value="/resources/material/material.min.js"/>"></script>
+<link rel='stylesheet prefetch'
+	href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -60,6 +65,13 @@
 
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script src="<c:url value="/resources/material/material.min.js"/>"></script>
+
+<script src="<c:url value="/resources/js/materialize.min.js"/>"></script>
+
+<script src="<c:url value="/resources/js/materialize.js"/>"></script>
+
 <style>
 #view-source {
 	position: fixed;
@@ -70,6 +82,8 @@
 	margin-bottom: 40px;
 	z-index: 900;
 }
+
+
 </style>
 </head>
 <body>
@@ -81,9 +95,9 @@
 				<i class="material-icons">menu</i>
 			</div>
 			<div class="mdl-layout__header-row">
-				<span class="android-title mdl-layout-title"> <img
+				<span class="android-title mdl-layout-title"> <a href="<c:url value="/"/>"><img
 					class="android-logo-image"
-					src="<c:url value="/resources/material/images/logo.png"/>">
+					src="<c:url value="/resources/material/images/logo.png"/>"></a>
 				</span>
 				<!-- Add spacer, to align navigation to the right in desktop -->
 				<div class="android-header-spacer mdl-layout-spacer"></div>
@@ -112,12 +126,14 @@
 							class="mdl-navigation__link mdl-typography--text-uppercase"
 							href="<c:url value="/userpage/spend"/>">spend</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
+							href="<c:url value="/userpage/fagerstrom"/>">test</a> <a
+							class="mdl-navigation__link mdl-typography--text-uppercase"
 							href="<c:url value="/userpage/calendar"/>">calendar</a>
 					</nav>
 				</div>
-				<span class="android-mobile-title mdl-layout-title"> <img
+				<span class="android-mobile-title mdl-layout-title"> <a href="<c:url value="/"/>"><img
 					class="android-logo-image"
-					src="<c:url value="/resources/material/images/logo.png"/>">
+					src="<c:url value="/resources/material/images/logo.png"/>"></a>
 				</span>
 				<button
 					class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"
@@ -127,29 +143,50 @@
 				<ul
 					class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
 					for="more-button">
-					<li class="mdl-menu__item">Sign in</li>
-					<li class="mdl-menu__item">Sign out</li>
+					<c:if test="${pageContext.request.userPrincipal.name == null}">
+					<li class="mdl-menu__item"><a href=<c:url value="/login"/>>Sign in</a></li>
+					</c:if>
+					<c:if test="${pageContext.request.userPrincipal.name != null}">
+					<li class="mdl-menu__item"><a href=<c:url value="/logout"/>>Sign out</a></li>
+					</c:if>
+					<li class="mdl-menu__item"><a>Sign up</a></li>
 				</ul>
 			</div>
 		</div>
 
+
+
 		<div class="android-drawer mdl-layout__drawer">
 			<span class="mdl-layout-title"> <img
-				class="android-logo-image" src="<c:url value="/resources/material/images/logo-white.png"/>">
+				class="android-logo-image"
+				src="<c:url value="/resources/material/images/logo-white.png"/>">
 			</span>
 			<nav class="mdl-navigation">
 				<a class="mdl-navigation__link" href="<c:url value="/"/>">home</a> <a
-					class="mdl-navigation__link" href="<c:url value="/userpage/todayamount"/>">today</a> <a
-					class="mdl-navigation__link" href="<c:url value="/userpage/ranking"/>">ranking</a> <a
-					class="mdl-navigation__link" href="<c:url value="/userpage/chartFromRecord"/>">chart</a> <a
-					class="mdl-navigation__link" href="<c:url value="/userpage/mynicotine"/>">nicotine</a> <a
-					class="mdl-navigation__link" href="<c:url value="/userpage/spend"/>">spend</a> <a
-					class="mdl-navigation__link" href="<c:url value="/userpage/calendar"/>">calendar</a>
+					class="mdl-navigation__link"
+					href="<c:url value="/userpage/todayamount"/>">today</a> <a
+					class="mdl-navigation__link"
+					href="<c:url value="/userpage/ranking"/>">ranking</a> <a
+					class="mdl-navigation__link"
+					href="<c:url value="/userpage/chartFromRecord"/>">chart</a> <a
+					class="mdl-navigation__link"
+					href="<c:url value="/userpage/mynicotine"/>">nicotine</a> <a
+					class="mdl-navigation__link"
+					href="<c:url value="/userpage/spend"/>">spend</a> <a
+					class="mdl-navigation__link "
+					href="<c:url value="/userpage/fagerstrom"/>">test</a> <a
+					class="mdl-navigation__link"
+					href="<c:url value="/userpage/calendar"/>">calendar</a>
 			</nav>
 		</div>
+		<div class="android-content mdl-layout__content">
 
-		<tiles:insertAttribute name="body" />
+			<a name="top" />
+			<tiles:insertAttribute name="body" />
 
+			<tiles:insertAttribute name="footer" />
+
+		</div>
 	</div>
 
 

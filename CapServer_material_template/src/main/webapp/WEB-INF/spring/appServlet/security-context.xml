@@ -25,7 +25,21 @@
 	
 	<security:http auto-config="true" use-expressions="true">
 	<security:csrf disabled="true"/>
-		<security:intercept-url pattern="/userpage/**"
+		<security:intercept-url pattern="/userpage/chartFromRecord"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/chartFromRecordToJsonArray"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/chartFromRecordToJsonArrayDaily/**"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/mynicotine"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/spend"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/fagerstrom"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/calendar"
+			access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/userpage/todayamount"
 			access="hasRole('ROLE_USER')" />
 		<security:form-login login-page="/login"
 			authentication-failure-url="/login?error"/>

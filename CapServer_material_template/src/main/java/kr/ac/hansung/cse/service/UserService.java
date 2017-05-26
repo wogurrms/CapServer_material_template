@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.hansung.cse.dao.UserDAO;
-import kr.ac.hansung.cse.model.Product;
 import kr.ac.hansung.cse.model.User;
 
 @Service
