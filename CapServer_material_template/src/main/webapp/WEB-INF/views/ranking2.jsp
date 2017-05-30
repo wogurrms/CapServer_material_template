@@ -42,9 +42,10 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>Your Ranking in All Users</h2>
+		<h2>Your rankings among all users</h2>
 		<p class="lead">전체 사용자 중 당신의 랭킹입니다.</p>
-		<div id="table_div" class="google-visualization-table-td"></div>
-
+		<div class="card-panel">
+			<div id="table_div" class="google-visualization-table-td"></div>
+		</div>
 	</div>
 </div>

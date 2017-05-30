@@ -3,22 +3,6 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 
 <html lang="en">
 <head>
@@ -33,14 +17,19 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"
 	rel="stylesheet">
+	
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+
 <link rel="stylesheet"
 	href="<c:url value="/resources/material/material.min.css"/>">
-	
+
 <link rel="stylesheet"
 	href="<c:url value="/resources/material/materialize.min.css"/>">
 	
+<link rel="stylesheet"
+	href="<c:url value="/resources/material/materialize.css"/>">
+
 <link rel="stylesheet"
 	href="<c:url value="/resources/material/styles.css"/>">
 
@@ -72,6 +61,18 @@
 
 <script src="<c:url value="/resources/js/materialize.js"/>"></script>
 
+<script>
+
+$(document).ready(function() {
+  $('select').material_select();
+});
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+</script>
+
+
 <style>
 #view-source {
 	position: fixed;
@@ -82,8 +83,6 @@
 	margin-bottom: 40px;
 	z-index: 900;
 }
-
-
 </style>
 </head>
 <body>
@@ -95,26 +94,25 @@
 				<i class="material-icons">menu</i>
 			</div>
 			<div class="mdl-layout__header-row">
-				<span class="android-title mdl-layout-title"> <a href="<c:url value="/"/>"><img
-					class="android-logo-image"
-					src="<c:url value="/resources/material/images/logo.png"/>"></a>
+				<span class="android-title mdl-layout-title"> <a
+					href="<c:url value="/"/>"><img class="android-logo-image"
+						src="<c:url value="/resources/material/images/logo.png"/>"></a>
 				</span>
 				<!-- Add spacer, to align navigation to the right in desktop -->
 				<div class="android-header-spacer mdl-layout-spacer"></div>
-				<div
-					class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-					<label class="mdl-button mdl-js-button mdl-button--icon"
-						for="search-field"> <i class="material-icons">search</i>
-					</label>
-					<div class="mdl-textfield__expandable-holder">
-						<input class="mdl-textfield__input" type="text" id="search-field">
-					</div>
-				</div>
+<!-- 				<div -->
+<!-- 					class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width"> -->
+<!-- 					<label class="mdl-button mdl-js-button mdl-button--icon" -->
+<!-- 						for="search-field"> <i class="material-icons">search</i> -->
+<!-- 					</label> -->
+<!-- 					<div class="mdl-textfield__expandable-holder"> -->
+<!-- 						<input class="mdl-textfield__input" type="text" id="search-field"> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
 				<!-- Navigation -->
 				<div class="android-navigation-container">
 					<nav class="android-navigation mdl-navigation">
-						 <a
-							class="mdl-navigation__link mdl-typography--text-uppercase"
+						<a class="mdl-navigation__link mdl-typography--text-uppercase"
 							href="<c:url value="/userpage/todayamount"/>">today</a> <a
 							class="mdl-navigation__link mdl-typography--text-uppercase"
 							href="<c:url value="/userpage/ranking"/>">ranking</a> <a
@@ -130,9 +128,9 @@
 							href="<c:url value="/userpage/calendar"/>">calendar</a>
 					</nav>
 				</div>
-				<span class="android-mobile-title mdl-layout-title"> <a href="<c:url value="/"/>"><img
-					class="android-logo-image"
-					src="<c:url value="/resources/material/images/logo.png"/>"></a>
+				<span class="android-mobile-title mdl-layout-title"> <a
+					href="<c:url value="/"/>"><img class="android-logo-image"
+						src="<c:url value="/resources/material/images/logo.png"/>"></a>
 				</span>
 				<button
 					class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"
@@ -143,12 +141,15 @@
 					class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
 					for="more-button">
 					<c:if test="${pageContext.request.userPrincipal.name == null}">
-					<li class="mdl-menu__item"><a href=<c:url value="/login"/>>Sign in</a></li>
+						<li class="mdl-menu__item"><a href=<c:url value="/login"/>>Sign
+								in</a></li>
 					</c:if>
 					<c:if test="${pageContext.request.userPrincipal.name != null}">
-					<li class="mdl-menu__item"><a href=<c:url value="/logout"/>>Sign out</a></li>
+						<li class="mdl-menu__item"><a href=<c:url value="/logout"/>>Sign
+								out</a></li>
 					</c:if>
-					<li class="mdl-menu__item"><a>Sign up</a></li>
+					<li class="mdl-menu__item"><a href=<c:url value="/register"/>>Sign
+							up</a></li>
 				</ul>
 			</div>
 		</div>
@@ -161,8 +162,7 @@
 				src="<c:url value="/resources/material/images/logo-white.png"/>">
 			</span>
 			<nav class="mdl-navigation">
-				 <a
-					class="mdl-navigation__link"
+				<a class="mdl-navigation__link"
 					href="<c:url value="/userpage/todayamount"/>">today</a> <a
 					class="mdl-navigation__link"
 					href="<c:url value="/userpage/ranking"/>">ranking</a> <a

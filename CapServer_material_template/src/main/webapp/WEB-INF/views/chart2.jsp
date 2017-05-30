@@ -155,11 +155,19 @@
 
 <div class="container-wrapper">
 	<div class="container">
-		<h2>Your Smoking Pattern Chart</h2>
+		<h2>Your Smoking History Chart</h2>
 		<p class="lead">당신의 흡연기록 차트입니다.</p>
-		<div id="chart_div"></div>
-		<p space></p>
-		<button id="refresh-btn" type="button" class="btn btn-default">일간
-			차트</button>
+		<div class="card-panel">
+
+			<div class="row">
+				<div class="input-field">
+					<input type="date" class="datepicker">
+				</div>
+			</div>
+			<div id="chart_div"></div>
+			<p space></p>
+			<button id="refresh-btn" type="button" class="btn btn-default">일간
+				차트</button>
+		</div>
 	</div>
 </div>

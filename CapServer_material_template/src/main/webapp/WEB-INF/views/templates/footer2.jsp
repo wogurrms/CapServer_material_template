@@ -10,7 +10,7 @@
 			You only smoke, we'll analyze it.</div>
 		<p class="mdl-typography--font-light">
 			If you smoke, I'll show you the information on the server. <br>
-			<a href="" class="android-link mdl-typography--font-light">Join Us</a>
+			<a href="<c:url value="/register"/>" class="android-link mdl-typography--font-light">Join Us</a>
 		</p>
 	</div>
 	<div class="android-customized-section-image"></div>

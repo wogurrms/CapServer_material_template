@@ -78,5 +78,25 @@ public class LogController {
 		}
 		return "redirect:/login?logout";
 	}
+	
+	@RequestMapping(value ="/register", method = RequestMethod.GET)
+	public String registerPage(Model model){
 
+		
+		User user = new User();
+		
+		
+		model.addAttribute("user", user);
+		
+		return "register";
+	}
+	
+	@RequestMapping(value ="/register", method = RequestMethod.POST)
+	public String registerUser(Model model){
+		
+		User user = new User();
+		
+		
+		return "home";
+	}
 }

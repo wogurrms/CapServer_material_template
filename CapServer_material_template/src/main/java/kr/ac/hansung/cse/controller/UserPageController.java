@@ -150,6 +150,7 @@ public class UserPageController {
 
 		String nicotineDependence = "";
 		String userStatus = "";
+		int grade = 0;
 		HashMap<String, String> resultMap = new HashMap<String, String>();
 
 		if (avgAmount <= 10) {
@@ -166,23 +167,29 @@ public class UserPageController {
 		if (sum <= 2 && sum >= 0) {
 			nicotineDependence = "매우 낮은 니코틴 의존도";
 			userStatus = "니코틴 의존도가 낮은 상태로 의존도가 높아지기 전에 금연을 시도해야 합니다.";
+			grade = 1;
 		} else if (sum <= 4 && sum >= 3) {
 			nicotineDependence = "낮은 니코틴 의존도";
 			userStatus = "니코틴 의존도가 낮은 상태로 의존도가 높아지기 전에 금연을 시도해야 합니다.";
+			grade = 2;
 		} else if (sum == 5) {
 			nicotineDependence = "중간 정도의 니코틴 의존도";
 			userStatus = "곧 금연을 시작하지 않으면 니코틴 의존도가 높아져 심각한 중독상태로 발전 할 수 있습니다.";
+			grade = 3;
 		} else if (sum <= 7 && sum >= 6) {
 			nicotineDependence = "높은 니코틴 의존도";
 			userStatus = "자신의 흡연을 조절 할 수 없고, 니코틴 중독 치료에 유효한 금연 " + "치료제 처방이나 니코틴 대체제 사용에 대해 의사와 논의할 필요가 있습니다.";
+			grade = 4;
 		} else if (sum <= 8 && sum >= 10) {
 			nicotineDependence = "매우 높은 니코틴 의존도";
 			userStatus = "자신의 흡연을 조절 할 수 없고, 니코틴 중독 치료에 유효한 금연 " + "치료제 처방이나 니코틴 대체제 사용에 대해 의사와 논의할 필요가 있습니다.";
+			grade = 5;
 		}
 
 		resultMap.put("nicotineDependence", nicotineDependence);
 		resultMap.put("userStatus", userStatus);
-
+		resultMap.put("grade", grade+"");
+		
 		model.addAttribute("resultMap", resultMap);
 
 		return "fagerstromresult";
