@@ -39,9 +39,6 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-<!-- funkRadio CSS -->
-<link href="<c:url value="/resources/css/funkyRadio.css"/>"
-	rel="stylesheet">
 
 <link
 	href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic'
@@ -70,6 +67,8 @@ $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
+  
+
 </script>
 
 
@@ -101,6 +100,7 @@ $('.datepicker').pickadate({
 				<!-- Add spacer, to align navigation to the right in desktop -->
 				<div class="android-header-spacer mdl-layout-spacer"></div>
 <!-- 				<div -->
+
 <!-- 					class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width"> -->
 <!-- 					<label class="mdl-button mdl-js-button mdl-button--icon" -->
 <!-- 						for="search-field"> <i class="material-icons">search</i> -->
@@ -162,19 +162,19 @@ $('.datepicker').pickadate({
 				src="<c:url value="/resources/material/images/logo-white.png"/>">
 			</span>
 			<nav class="mdl-navigation">
-				<a class="mdl-navigation__link"
+				<a class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/todayamount"/>">today</a> <a
-					class="mdl-navigation__link"
+					class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/ranking"/>">ranking</a> <a
-					class="mdl-navigation__link"
+					class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/chartFromRecord"/>">chart</a> <a
-					class="mdl-navigation__link"
+					class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/mynicotine"/>">nicotine</a> <a
-					class="mdl-navigation__link"
+					class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/spend"/>">spend</a> <a
-					class="mdl-navigation__link "
+					class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/fagerstrom"/>">test</a> <a
-					class="mdl-navigation__link"
+					class="mdl-navigation__link mdl-typography--text-uppercase"
 					href="<c:url value="/userpage/calendar"/>">calendar</a>
 			</nav>
 		</div>

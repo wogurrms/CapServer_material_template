@@ -6,7 +6,7 @@
 <div class="container-wrapper">
 	<div class="container">
 		<h2>FagerStrom Reult Page</h2>
-		<p class="lead">파거스트롬 테스트!</p>
+		<p class="lead">파거스트롬 테스트 결과입니다.</p>
 		<div class="card-panel">
 			<table class="table centered highlight responsive-table">
 				<thead class="success">

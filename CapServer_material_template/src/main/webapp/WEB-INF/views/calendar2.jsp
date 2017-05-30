@@ -6,7 +6,7 @@
 <div class="container-wrapper">
 	<div class="container">
 		<h2>My Calendar Page</h2>
-		<p class="lead">당신의 흡연 달력입니다!</p>
+		<p class="lead">당신의 흡연 달력입니다.</p>
 
 	</div>
 </div>
