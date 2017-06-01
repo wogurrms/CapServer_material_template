@@ -13,76 +13,104 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#calendar{
-  margin-left: auto;
-  margin-right: auto;
-  width: 320px;
-  font-family: 'Lato', sans-serif;
-}
-#calendar_weekdays div{
-  display:inline-block;
-  vertical-align:top;
-}
-#calendar_content, #calendar_weekdays, #calendar_header{
-  position: relative;
-  width: 320px;
-  overflow: hidden;
-  float: left;
-  z-index: 10;
-}
-#calendar_weekdays div, #calendar_content div{
-  width:40px;
-  height: 40px;
-  overflow: hidden;
-  text-align: center;
-  background-color: #FFFFFF;
-  color: #787878;
-}
-#calendar_content{
-  -webkit-border-radius: 0px 0px 12px 12px;
-  -moz-border-radius: 0px 0px 12px 12px; 
-  border-radius: 0px 0px 12px 12px;
-}
-#calendar_content div{
-  float: left;
-}
-#calendar_content div:hover{
-  background-color: #F8F8F8;
-}
-#calendar_content div.blank{
-  background-color: #E8E8E8;
-}
-#calendar_header, #calendar_content div.today{
-  zoom: 1;
-  filter: alpha(opacity=70);
-  opacity: 0.7;
-}
-#calendar_content div.today{
-  color: #FFFFFF;
-}
-#calendar_header{
-  width: 100%;
-  height: 37px;
-  text-align: center;
-  background-color: #FF6860;
-  padding: 18px 0;
-  -webkit-border-radius: 12px 12px 0px 0px;
-  -moz-border-radius: 12px 12px 0px 0px; 
-  border-radius: 12px 12px 0px 0px;
-}
-#calendar_header h1{
-  font-size: 1.5em;
-  color: #FFFFFF;
-  float:left;
-  width:70%;
+@main-bg:rgb(40,40,59);
+@calendar-border:rgb(220,220,255);
+@calendar-bg:#fff;
+@calendar-standout:rgb(40,40,59);
+@calendar-color:#444;
+@calendar-fade-color:#b2ebf2;
+@body-color:#444;
+
+
+*, *:before, *:after {
+  box-sizing:border-box;
 }
 
-i[class^=icon-chevron]{
-  color: #FFFFFF;
-  float: left;
-  width:15%;
-  border-radius: 50%;
+.group {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
+
+.max(@maxWidth;
+  @rules) {
+    @media only screen and (max-width: @maxWidth) {
+      @rules();
+    }
+  }
+
+.min(@minWidth;
+  @rules) {
+    @media only screen and (min-width: @minWidth) {
+      @rules();
+    }
+  }
+
+
+.calendar-wrapper {
+  width:360px;
+  margin:3em auto;
+  padding:2em;
+  border:1px solid @calendar-border;
+  border-radius:5px;
+  background:@calendar-bg;
+  
+}
+td.not-current {
+  color: #bdbdbd;
+}
+td.normal {}
+td.today {
+  font-weight:700;
+  color:@calendar-standout;
+  font-size:1.5em;
+}
+td.hilight{
+	color: #ef9a9a;
+}
+thead td {
+  border:none;
+  color:@calendar-standout;
+  text-transform:uppercase;
+  font-size:1.5em;
+}
+#btnPrev {
+  float:left;
+  margin-bottom:20px;
+  &:before {
+    content:'\f104';
+    font-family:FontAwesome;
+    padding-right:4px;
+  }
+}
+#btnNext {
+  float:right;
+  margin-bottom:20px;
+  &:after {
+    content:'\f105';
+    font-family:FontAwesome;
+    padding-left:4px;
+  }
+}
+#btnPrev, #btnNext {
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1em;
+  color:@calendar-fade-color;
+  cursor:pointer;
+  font-family:"Roboto Condensed", sans-serif;
+  text-transform:uppercase;
+  transition:all 0.3s ease;
+  &:hover {
+    color:@calendar-standout;
+    font-weight:bold;
+  }
+}
+
+
  body {
   margin: 0;
 }
@@ -131,6 +159,12 @@ a img{
 	background-color: #F5F5F5;
 }
 
+/* progress Bar */
+
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline
+}
 
 @
 -webkit-keyframes progress-bar-stripes {
@@ -271,23 +305,6 @@ to {
 		rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
 }
 
-audio, canvas, progress, video {
-	display: inline-block;
-	vertical-align: baseline
-}
-
-
-.progress-bar-striped {
-	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15)
-		25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%,
-		rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
-	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%,
-		transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%,
-		rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
-	background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%,
-		transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%,
-		rgba(255, 255, 255, .15) 75%, transparent 75%, transparent)
-}
 
 /* .table{ */
 /* 	table-layout: fixed; */

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ac.hansung.cse.model.CalendarData;
 import kr.ac.hansung.cse.model.ChartResponseData;
 import kr.ac.hansung.cse.model.ChartResponseDataAvg;
 import kr.ac.hansung.cse.model.NicotineResponseData;
@@ -396,4 +397,18 @@ public class UserPageController {
 		return "spend";
 	}
 	
+	@RequestMapping(value="/calendarData/{month}", method= RequestMethod.GET)
+	public @ResponseBody CalendarData getCalendarData(@PathVariable(value="month")String month,Authentication authentication){
+		
+		String username = authentication.getName();
+		User user = userService.getUserByNick(username);
+		
+		System.out.println(month);
+
+		int todayAmount = recordService.getTodayAmount(user.getUid());
+		float myAvg = recordService.getAvgAmount(user.getUid());
+		
+		
+		return new CalendarData();
+	}
 }

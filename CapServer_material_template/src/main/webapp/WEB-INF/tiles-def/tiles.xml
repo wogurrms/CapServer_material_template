@@ -15,18 +15,15 @@
   
    <!-- 상속받아서 사용함 -->
   <definition name="login" extends="base">
-    <put-attribute name="title" value="Login Page" />
     <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
   </definition>
   
    <!-- 유저 테이블  -->
   <definition name="users" extends="base">
-    <put-attribute name="title" value="Users Table" />
     <put-attribute name="body" value="/WEB-INF/views/users.jsp" />
   </definition>
    <!-- 오늘 핀 담배 갯수 -->
   <definition name="todayamount" extends="base">
-    <put-attribute name="title" value="My Today Smoking Count" />
     <put-attribute name="body" value="/WEB-INF/views/todayamount2.jsp" />
   </definition>
    <!-- 시간대 별 차트  -->
@@ -35,37 +32,30 @@
   </definition>
    <!-- 체내 니코틴 양  -->
   <definition name="mynicotine" extends="base">
-    <put-attribute name="title" value="My Current Nicotine" />
     <put-attribute name="body" value="/WEB-INF/views/mynicotine2.jsp" />
   </definition>
    <!-- 파거스트롬 테스트  -->
   <definition name="fagerstrom" extends="base">
-    <put-attribute name="title" value="My Fagerstrom Test" />
     <put-attribute name="body" value="/WEB-INF/views/fagerstrom2.jsp" />
   </definition>  
    <!-- 파거스트롬 테스트 결과 창  -->
   <definition name="fagerstromresult" extends="base">
-    <put-attribute name="title" value="My Fagerstrom Test" />
     <put-attribute name="body" value="/WEB-INF/views/fagerstromresult2.jsp" />
   </definition>
    <!-- 랭킹 -->
   <definition name="ranking" extends="base">
-    <put-attribute name="title" value="My Ranking in All Users" />
     <put-attribute name="body" value="/WEB-INF/views/ranking2.jsp" />
   </definition>
      <!-- 소모금액 -->
   <definition name="spend" extends="base">
-    <put-attribute name="title" value="My Ranking in All Users" />
     <put-attribute name="body" value="/WEB-INF/views/spend2.jsp" />
   </definition>
      <!-- 달력 -->
   <definition name="calendar" extends="base">
-    <put-attribute name="title" value="My Ranking in All Users" />
     <put-attribute name="body" value="/WEB-INF/views/calendar2.jsp" />
   </definition>
      <!-- 회원가입 -->
   <definition name="register" extends="base">
-    <put-attribute name="title" value="My Ranking in All Users" />
     <put-attribute name="body" value="/WEB-INF/views/register.jsp" />
   </definition>
 </tiles-definitions>

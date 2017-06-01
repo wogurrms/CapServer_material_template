@@ -11,22 +11,22 @@
 				width="110px" height="100px" style="margin: 0px 40px">
 
 			<%-- modelAttribute 의 이름과 controller 에서 넘겨준 model 로 넘기는 객체의 이름을 동일하게 해야 한다. --%>
-			<sf:form action="<c:url value="/register"/>"
+			<form action="<c:url value="/register"/>"
 				method="post" modelAttribute="user">
 
 				<div class="input-field col s6">
 					<i class="material-icons prefix">account_circle</i>
-					<sf:input path="nick" id="nick" class="form-control"
+					<input path="nick" id="nick" class="form-control"
 						placeholder="username" style="width: 30%" />
-					<sf:errors path="nick" cssStyle="color:#ff0000" />
+					<errors path="nick" cssStyle="color:#ff0000" />
 				</div>
 
 
 				<div class="input-field col s6">
 					<i class="material-icons prefix">lock</i>
-					<sf:password path="password" id="password" class="form-control"
+					<input type="password" path="password" id="password" class="form-control"
 						placeholder="password" style="width: 30%" />
-					<sf:errors path="password" cssStyle="color:#ff0000" />
+					<errors path="password" cssStyle="color:#ff0000" />
 				</div>
 				<div class="row" align="center">
 					<div class="input-field" style="width: 30%">
@@ -62,7 +62,7 @@
 				</button>
 
 
-			</sf:form>
+			</form>
 		</div>
 	</div>
 </div>

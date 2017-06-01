@@ -196,4 +196,12 @@ public class RecordDAO {
 		query.executeUpdate();
 	}
 
+	public void getCalendarData(int uid) {
+		Session session = sessionFactory.getCurrentSession();
+		String hqlQuery = "delete from Record where user_id = :uid";
+		Query query = session.createQuery(hqlQuery);
+		query.setParameter("uid", uid);
+		query.executeUpdate();
+	}
+
 }
