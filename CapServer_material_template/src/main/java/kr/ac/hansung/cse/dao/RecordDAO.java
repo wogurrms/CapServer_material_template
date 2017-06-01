@@ -2,7 +2,6 @@ package kr.ac.hansung.cse.dao;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -16,6 +15,7 @@ import kr.ac.hansung.cse.model.ChartResponseData;
 import kr.ac.hansung.cse.model.ChartResponseDataAvg;
 import kr.ac.hansung.cse.model.NicotineResponseData;
 import kr.ac.hansung.cse.model.Record;
+import kr.ac.hansung.cse.model.TrendResponseData;
 
 @Repository
 @Transactional
@@ -174,6 +174,26 @@ public class RecordDAO {
 		Long result = (Long) query.uniqueResult();
 
 		return result.intValue();
+	}
+
+	public List<TrendResponseData> getTrendLine(int uid) {
+		Session session = sessionFactory.getCurrentSession();
+		String hqlQuery = "select new kr.ac.hansung.cse.model.TrendResponseData( count(*), month(date), day(date) )"
+				+ "from Record r where user_id = :uid group by cast(r.date as date) order by day(date) desc";
+		Query query = session.createQuery(hqlQuery);
+		query.setParameter("uid", uid);
+		query.setMaxResults(7);
+
+		List<TrendResponseData> results = query.list();
+		return results;
+	}
+
+	public void deleteAllRecords(int uid) {
+		Session session = sessionFactory.getCurrentSession();
+		String hqlQuery = "delete from Record where user_id = :uid";
+		Query query = session.createQuery(hqlQuery);
+		query.setParameter("uid", uid);
+		query.executeUpdate();
 	}
 
 }

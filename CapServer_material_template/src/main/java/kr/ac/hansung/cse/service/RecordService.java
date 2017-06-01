@@ -11,6 +11,7 @@ import kr.ac.hansung.cse.model.ChartResponseData;
 import kr.ac.hansung.cse.model.ChartResponseDataAvg;
 import kr.ac.hansung.cse.model.NicotineResponseData;
 import kr.ac.hansung.cse.model.Record;
+import kr.ac.hansung.cse.model.TrendResponseData;
 
 @Service
 public class RecordService {
@@ -68,6 +69,14 @@ public class RecordService {
 	
 	public Long getRecordAvgByDate(String date){
 		return recordDao.getRecordAvgByDate(date);
+	}
+
+	public List<TrendResponseData> getTrendLine(int uid) {
+		return recordDao.getTrendLine(uid);
+	}
+
+	public void deleteAllRecords(int uid) {
+		recordDao.deleteAllRecords(uid);
 	}
 
 
